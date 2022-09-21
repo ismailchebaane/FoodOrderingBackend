@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("./public"));
  app.use(express.json());
 var corsOption={
-  origin:"http://localhost/3000/"
+  origin:"https://barakat-food-ordering.herokuapp.com/"
 }
 app.use(cors(corsOption))
 app.use(bodyParser.json())
