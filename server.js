@@ -13,22 +13,25 @@ const jwt = require('jsonwebtoken');
 const cookieParser=require("cookie-parser")
 
 const path=require('path');
-if(process.env.NODE_ENV==="production"){
-
-  app.use(express.static("food-ordering-app/build"))
-  app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,"food-ordering-app","build","index.html"))
-  })
-}
+//if(process.env.NODE_ENV==="production"){
+//
+//  app.use(express.static("food-ordering-app/build"))
+//  app.get('*',(req,res)=>{
+//    res.sendFile(path.resolve(__dirname,"food-ordering-app","build","index.html"))
+//  })
+//}
 
 const app=express();
 
 app.use(bodyParser.urlencoded({
     extended: true
   }));
-app.use(express.static("./public"));
- app.use(express.json());
-
+app.use(express.static("public"));
+// app.use(express.json());
+//var corsOption={
+//  origin:"http://localhost/3000/"
+//}
+//app.use(cors(corsOption))
 app.use(bodyParser.json())
 app.use(cookieParser())
 db.on('error',console.error.bind(console,'MongoDb has Failed To connect error :'))
