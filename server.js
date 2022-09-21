@@ -36,17 +36,43 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 db.on('error',console.error.bind(console,'MongoDb has Failed To connect error :'))
 
+const url="mongodb+srv://ismail:xZGFHZUiqDeljwaR@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(url, function(err) {
+       if (err) {
+           console.log(err);
+       } else {
+           console.log("Successfully connected to mongo DB");
+       }
+   });
+
+
+
+
+   var userShema = new mongoose.Schema({
+    name:String,
+    email:{type:String,unique:true} ,
+    password: String
+},{collection:"UserInfo",});
+
+
+const User = mongoose.model("UserInfo", userShema);
+
+
+
+
+
 app.get('/', (req,res)=>{
 res.json({message:"welcome to food ordering"})
-
+res.send({message:"welcome to food ordering"})
 
 })
 
 
   app.use('/api/',ProductRouter)
 
-app.get('/products',async (req,res)=>{
- Product.find({}).then((resl)=>{
+app.get('/api/products',async (req,res)=>{
+  User.find({}).then((resl)=>{
    res.send(resl);
    console.log("working")
   }).catch((err)=>{
@@ -83,28 +109,6 @@ app.get('/products-by-categories',async (req,res)=>{
    })
 
  
-const url="mongodb+srv://ismail:xZGFHZUiqDeljwaR@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
-
-mongoose.connect(url, function(err) {
-       if (err) {
-           console.log(err);
-       } else {
-           console.log("Successfully connected to mongo DB");
-       }
-   });
-
-
-
-
-   var userShema = new mongoose.Schema({
-    name:String,
-    email:{type:String,unique:true} ,
-    password: String
-},{collection:"UserInfo",});
-
-
-const User = mongoose.model("UserInfo", userShema);
-
 
 app.post('/register',async (req,res)=> {
 try {
