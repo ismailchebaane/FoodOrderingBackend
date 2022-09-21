@@ -60,7 +60,7 @@ res.send({message:"welcome to food ordering"})
 
 
   app.use('/api/',ProductRouter)
-app.get("/user",async(req,res)=>{
+app.get("https://barakat-food-ordering.herokuapp.com/user",async(req,res)=>{
 
   User.find({}).then((resl)=>{
     res.send(resl);
