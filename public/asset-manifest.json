@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/BARAKAT/static/css/main.68d78258.css",
+    "main.js": "/BARAKAT/static/js/main.b8743f06.js",
+    "static/media/pizza_banner.png": "/BARAKAT/static/media/pizza_banner.8b37239c310c6def84c7.png",
+    "static/media/about-image.png": "/BARAKAT/static/media/about-image.ed863928a4532f3c08fa.png",
+    "static/media/pizza.png": "/BARAKAT/static/media/pizza.84e78aa9b299a1f200ea.png",
+    "static/media/soup.png": "/BARAKAT/static/media/soup.cfd1b9dc898ee0a7d42a.png",
+    "static/media/makrouna.png": "/BARAKAT/static/media/makrouna.246a6ec8c96e730c8044.png",
+    "static/media/logo.png": "/BARAKAT/static/media/logo.36838ba1386b719332fc.png",
+    "static/media/chicken wings.png": "/BARAKAT/static/media/chicken wings.2ead782ebf94e67c82b7.png",
+    "static/media/chapati mehdia.png": "/BARAKAT/static/media/chapati mehdia.c6c29d2bf8951791515f.png",
+    "static/media/makloub.png": "/BARAKAT/static/media/makloub.7a31aa53b9aba8d67074.png",
+    "static/media/poulet.png": "/BARAKAT/static/media/poulet.a453bf44b6e1a9ad4ad3.png",
+    "static/media/chicken-nuggets.png": "/BARAKAT/static/media/chicken-nuggets.2817eaeb43a03c90577c.png",
+    "static/media/rouz-jerbi.png": "/BARAKAT/static/media/rouz-jerbi.96f8e40b6b8a91c49994.png",
+    "static/media/KOSKS.png": "/BARAKAT/static/media/KOSKS.94e25734999cbb2e529b.png",
+    "static/media/hamburger.png": "/BARAKAT/static/media/hamburger.6e1e1492b82753cee6ce.png",
+    "static/media/lasagna.png": "/BARAKAT/static/media/lasagna.e40059234c110a211e8c.png",
+    "static/media/foody.png": "/BARAKAT/static/media/foody.2c0de713e36c81c7a6ab.png",
+    "static/media/ClashDisplay-Medium.woff2": "/BARAKAT/static/media/ClashDisplay-Medium.88a32cc8fc026d95af05.woff2",
+    "static/media/ClashDisplay-Regular.woff2": "/BARAKAT/static/media/ClashDisplay-Regular.98b52bdf102085f28108.woff2",
+    "static/media/ClashDisplay-Bold.woff2": "/BARAKAT/static/media/ClashDisplay-Bold.e2f8628a6f360f644a76.woff2",
+    "static/media/revicons.eot": "/BARAKAT/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/BARAKAT/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/BARAKAT/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/BARAKAT/index.html",
+    "static/media/arrow-right-long-svgrepo-com.svg": "/BARAKAT/static/media/arrow-right-long-svgrepo-com.a7f71589bf082b88f9b5f1b140b57870.svg",
+    "static/media/cart.svg": "/BARAKAT/static/media/cart.2276ad715714ff0d6f0223caebec0359.svg",
+    "main.68d78258.css.map": "/BARAKAT/static/css/main.68d78258.css.map",
+    "main.b8743f06.js.map": "/BARAKAT/static/js/main.b8743f06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68d78258.css",
+    "static/js/main.b8743f06.js"
+  ]
+}
