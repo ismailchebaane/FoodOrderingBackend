@@ -51,6 +51,7 @@ app.get('/api/products',async (req,res)=>{
    console.log("working")
   }).catch((err)=>{
    console.log(err);
+   console.log("working")
   })
 
     
