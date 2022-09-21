@@ -45,13 +45,13 @@ res.json({message:"welcome to food ordering"})
 
   app.use('/api/',ProductRouter)
 
-app.get('/api/products',async (req,res)=>{
+app.get('/products',async (req,res)=>{
  Product.find({}).then((resl)=>{
    res.send(resl);
    console.log("working")
   }).catch((err)=>{
    console.log(err);
-   console.log("working")
+
   })
 
     
