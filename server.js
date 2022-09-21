@@ -28,10 +28,7 @@ app.use(bodyParser.urlencoded({
   }));
 app.use(express.static("./public"));
  app.use(express.json());
-var corsOption={
-  origin:"https://barakat-food-ordering.herokuapp.com/"
-}
-app.use(cors(corsOption))
+
 app.use(bodyParser.json())
 app.use(cookieParser())
 db.on('error',console.error.bind(console,'MongoDb has Failed To connect error :'))
