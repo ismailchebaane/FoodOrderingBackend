@@ -183,7 +183,7 @@ res.status(200).send("userLoggedOut")
 })
 
 
-let port=process.env.PORT||4000;
-app.listen(port, function() {
+
+app.listen(process.env.PORT||4000, function() {
     console.log("Server started on port 4000");
   });
