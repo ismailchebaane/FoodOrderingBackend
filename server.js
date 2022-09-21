@@ -70,9 +70,19 @@ res.send({message:"welcome to food ordering"})
 
 
   app.use('/api/',ProductRouter)
+app.get("/user",async(req,res)=>{
 
-app.get('/api/products',async (req,res)=>{
   User.find({}).then((resl)=>{
+    res.send(resl);
+    console.log("working")
+   }).catch((err)=>{
+    console.log(err);
+ 
+   })
+
+})
+app.get('/api/products',async (req,res)=>{
+ Product.find({}).then((resl)=>{
    res.send(resl);
    console.log("working")
   }).catch((err)=>{
