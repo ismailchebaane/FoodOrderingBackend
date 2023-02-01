@@ -9,7 +9,7 @@ const Product=require('./models/ProductModel')
 const UserInfo=require("./models/ProductModel");
 var md5 = require('md5');
 const ProductRouter=require("./Routes/ProductRoute")
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); 
 const cookieParser=require("cookie-parser")
 
 const path=require('path');
@@ -26,68 +26,30 @@ const app=express();
 app.use(bodyParser.urlencoded({
     extended: true
   }));
-app.use(express.static("./public"));
+app.use(express.static("public"));
  app.use(express.json());
 var corsOption={
-  origin:"https://barakat-food-ordering.herokuapp.com"
+  origin:"http://localhost/4000/"
 }
 app.use(cors(corsOption))
 app.use(bodyParser.json())
 app.use(cookieParser())
 db.on('error',console.error.bind(console,'MongoDb has Failed To connect error :'))
 
-const url="mongodb+srv://ismail:xZGFHZUiqDeljwaR@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
-
-mongoose.connect(url, function(err) {
-       if (err) {
-           console.log(err);
-       } else {
-           console.log("Successfully connected to mongo DB");
-       }
-   });
-
-
-
-
-   var userShema = new mongoose.Schema({
-    name:String,
-    email:{type:String,unique:true} ,
-    password: String
-},{collection:"UserInfo",});
-
-
-const User = mongoose.model("UserInfo", userShema);
-
-
-
-
-
 app.get('/', (req,res)=>{
 res.json({message:"welcome to food ordering"})
-res.send({message:"welcome to food ordering"})
-console.log("hey")
+
+
 })
 
 
-  app.use('/api/',ProductRouter)
-app.get("/user",async(req,res)=>{
+app.use('/api/',ProductRouter)
 
-  User.find({}).then((resl)=>{
-    res.send(resl.json());
-    console.log("working")
-   }).catch((err)=>{
-    console.log(err);
- 
-   })
-
-})
 app.get('/api/products',async (req,res)=>{
  Product.find({}).then((resl)=>{
    res.send(resl);
-   console.log("working")
   }).catch((err)=>{
    console.log(err);
-
   })
 
     
@@ -119,13 +81,35 @@ app.get('/products-by-categories',async (req,res)=>{
    })
 
  
+const url="mongodb+srv://ismail:xZGFHZUiqDeljwaR@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(url, function(err) {
+       if (err) {
+           console.log(err);
+       } else {
+           console.log("Successfully connected to mongo DB");
+       }
+   });
+
+
+
+
+   var userShema = new mongoose.Schema({
+    name:String,
+    email:{type:String,unique:true} ,
+    password: String
+},{collection:"UserInfo",});
+
+
+const User = mongoose.model("UserInfo", userShema);
+
 
 app.post('/register',async (req,res)=> {
 try {
   
   const { name, email, password } = req.body;  
 
- console.log(req.body.pass)
+ console.log(email)
  const userexist= await User.findOne({email});
  if(userexist){
   res.status(400);
@@ -158,7 +142,7 @@ if(isCorrect){
   const secret= "thisismytokenokays"
 const token=await jwt.sign({id:user._id},secret)
 //to get all info about user except his password and user._doc to get only user info not other info with user info
-await User.updateOne({email:user.email},{token:token})
+// await User.updateOne({email:user.email},{token:token})
 const{password,...others}=user._doc
 
  res.cookie("access_token",token,{
@@ -197,7 +181,7 @@ res.status(200).send("userLoggedOut")
 })
 
 
-
-app.listen(process.env.PORT||4000, function() {
+let port=process.env.PORT||4000;
+app.listen(port, function() {
     console.log("Server started on port 4000");
   });
