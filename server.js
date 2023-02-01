@@ -23,15 +23,15 @@ if(process.env.NODE_ENV==="production"){
 
 const app=express();
 
+app.use(cors());
+
 app.use(bodyParser.urlencoded({
     extended: true
   }));
 app.use(express.static("public"));
+
  app.use(express.json());
-var corsOption={
-  origin:"http://localhost/4000/"
-}
-app.use(cors(corsOption))
+
 app.use(bodyParser.json())
 app.use(cookieParser())
 db.on('error',console.error.bind(console,'MongoDb has Failed To connect error :'))
